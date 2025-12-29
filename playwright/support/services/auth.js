@@ -15,8 +15,21 @@ export const authService = (request) => {
         });
     }
 
+    const getToken = async (user) => {
+        let token;
+        const response = await login(user);
+
+        if (response.status() == 200) {
+            const body = await response.json();
+            token = body.data.token;
+        }
+
+        return token;
+    }
+
     return {
         createUser,
-        login
+        login,
+        getToken
     }
 }
