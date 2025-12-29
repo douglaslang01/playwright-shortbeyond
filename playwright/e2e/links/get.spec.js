@@ -17,7 +17,7 @@ test.describe('GET /api/links', () => {
             await links.createLink(link, token);
         }
 
-        const response = await links.getlinks(token);
+        const response = await links.getLinks(token);
         expect(response.status()).toBe(200);
 
         const body = await response.json();
@@ -36,7 +36,7 @@ test.describe('GET /api/links', () => {
     });
 
     test('deve retornar uma lista vazia', async ({ links }) => {
-        const response = await links.getlinks(token);
+        const response = await links.getLinks(token);
         expect(response.status()).toBe(200);
 
         const body = await response.json();

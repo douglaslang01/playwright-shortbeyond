@@ -1,0 +1,27 @@
+meta {
+  name: Remove um link encurtado
+  type: http
+  seq: 3
+}
+
+delete {
+  url: http://localhost:3333/api/links
+  body: none
+  auth: inherit
+}
+
+headers {
+  Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyX2lkIjoiMDFLRDNRNUtaSlNXNFRRNkJEQTczOUJZTTciLCJleHAiOjE3NjcxMDI3NDUsImlhdCI6MTc2NzAxNjM0NX0.mmjA9hGN2lKDZrvTNb65GXNJU1PMl6av5WuQTnLXQzk
+}
+
+body:json {
+  {
+    "original_url": "https://www.instagram.com/douglaslang",
+    "title": "Meu Instagram"
+  }
+}
+
+settings {
+  encodeUrl: true
+  timeout: 0
+}
